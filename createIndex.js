@@ -3,6 +3,7 @@
 	fs.writeFileSync("./myIndex.txt", "A BIG STRING OF STUFF!");
 */
 const fs = require('fs');
+const { arrayBuffer } = require('stream/consumers');
 
 let dictionary = fs.readFileSync("./smallDictionary.txt").toString().split('\r\n');
 console.log(dictionary);
@@ -13,10 +14,21 @@ function createList(string){
 	}
 	return returnValue;
 }
-for(let i=0;i<dictionary.length;i++){
-	console.log(dictionary[i]);
+function arrToString(arr){
+	let returnValue = "";
+	for(let i=0;i<arr.length;i++){
+		returnValue+=String.fromCharCode(arr[i]);
+		// console.log(returnValue);
+	}
+	return returnValue;
 }
-console.log(createList("abc"));
+let newString = [];
+for(let i=0;i<dictionary.length;i++){
+	dictionary[i] = createList(dictionary[i]);
+	dictionary[i] = dictionary[i].sort();
+	dictionary[i] = arrToString(dictionary[i]);
+}
+console.log(dictionary);
 
 // fs.writeFileSync("./myIndex.txt", );
 
