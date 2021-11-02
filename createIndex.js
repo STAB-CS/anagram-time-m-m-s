@@ -6,13 +6,17 @@ const fs = require('fs');
 
 let dictionary = fs.readFileSync("./smallDictionary.txt").toString().split('\r\n');
 console.log(dictionary);
-console.log("hi".charAt(0));
-// function sortSting(string){
-// 	return("a");
-// }
-// for(let i=0;i<dictionary.length;i++){
-// 	console.log(dictionary[i]);
-// }
+function createList(string){
+	let returnValue = [];
+	for(let i=0;i<string.length;i++){
+		returnValue.push(string.charCodeAt(i));
+	}
+	return returnValue;
+}
+for(let i=0;i<dictionary.length;i++){
+	console.log(dictionary[i]);
+}
+console.log(createList("abc"));
 
 // fs.writeFileSync("./myIndex.txt", );
 
