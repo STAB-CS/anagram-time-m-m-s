@@ -6,6 +6,14 @@ const fs = require('fs');
 
 let dictionary = fs.readFileSync("./smallDictionary.txt").toString().split('\r\n');
 console.log(dictionary);
+console.log("hi".charAt(0));
+// function sortSting(string){
+// 	return("a");
+// }
+// for(let i=0;i<dictionary.length;i++){
+// 	console.log(dictionary[i]);
+// }
+
 // fs.writeFileSync("./myIndex.txt", );
 
 // Think about your components:
