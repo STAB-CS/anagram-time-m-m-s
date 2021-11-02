@@ -4,6 +4,9 @@
 */
 const fs = require('fs');
 
+let dictionary = fs.readFileSync("./smallDictionary.txt");
+fs.writeFileSync("./myIndex.txt", "A BIG STRING OF STUFF!");
+
 // Think about your components:
 // first you sort each work to
 // get a alphanumerical word, and
