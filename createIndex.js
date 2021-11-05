@@ -7,6 +7,11 @@ const { arrayBuffer } = require('stream/consumers');
 
 let dictionary = fs.readFileSync("./smallDictionary.txt").toString().split('\r\n');
 console.log(dictionary);
+
+function quickSort(arr){
+
+}
+
 function createList(string){
 	let returnValue = [];
 	for(let i=0;i<string.length;i++){
