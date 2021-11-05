@@ -1,5 +1,9 @@
 //quickSort test
-arr = [5,4,1,3,2];
+arr = [];
+
+for (let i = 0; i < 1000; i++) {
+    arr[i] = Math.random() * 255;
+}
 
 function quickSort(arr){
     let pivot = arr[0];
@@ -26,4 +30,6 @@ function quickSort(arr){
     return returnValue;
 }
 
+console.time();
 console.log(quickSort(arr));
+console.timeEnd();
