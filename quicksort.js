@@ -1,4 +1,4 @@
-//here is an example of quicksort
+//quickSort test
 arr = [5,4,1,3,2];
 
 function quickSort(arr){

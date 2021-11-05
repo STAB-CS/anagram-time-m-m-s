@@ -9,7 +9,28 @@ let dictionary = fs.readFileSync("./smallDictionary.txt").toString().split('\r\n
 console.log(dictionary);
 
 function quickSort(arr){
-
+    let pivot = arr[0];
+    let sml = [];
+    let big = [];
+    for(let i=1;i<arr.length;i++){
+        if(arr[i]<pivot){
+            sml.push(arr[i]);
+            sml = quickSort(sml);
+        }
+        else{
+            big.push(arr[i]);
+            big = quickSort(big);
+        }
+    }
+    returnValue = [];
+    for(let i=0;i<sml.length;i++){
+        returnValue.push(sml[i]);
+    }
+    returnValue.push(pivot);
+    for(let i=0;i<big.length;i++){
+        returnValue.push(big[i]);
+    }
+    return returnValue;
 }
 
 function createList(string){
@@ -29,9 +50,9 @@ function arrToString(arr){
 }
 let newString = [];
 for(let i=0;i<dictionary.length;i++){
-	dictionary[i] = createList(dictionary[i]);
-	dictionary[i] = dictionary[i].sort();
-	dictionary[i] = arrToString(dictionary[i]);
+	dictionary[i] = dictionary[i].split("");//createList(dictionary[i]);
+	dictionary[i] = quickSort(dictionary[i]);//dictionary[i].sort();
+	dictionary[i] = dictionary[i].join("");//arrToString(dictionary[i]);
 }
 console.log(dictionary);
 
